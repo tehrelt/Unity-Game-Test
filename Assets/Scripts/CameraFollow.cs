@@ -21,9 +21,9 @@ public class CameraFollow : MonoBehaviour
             Vector3 smoothPosition = Vector3.Lerp(transform.position, offsetedPosition, smoothSpeed);
             transform.position = smoothPosition;
         }
-        catch (System.Exception)
+        catch (System.Exception ex)
         {
-            Debug.Log("Player  not found");
+            Debug.LogError("Player not found: " + ex.Message);
         }
     }
 }
